@@ -19,8 +19,10 @@ The skill only activates when it detects an install/download command in your mes
 
 ### Three-Tier Check Flow
 
+Works across **all ecosystems** — `git clone`, `npm install`, `npx`, `pip install`, `cargo install`, `yarn add`, `pnpm add`.
+
 ```
-[User runs: npm install <package>]
+[User runs: git clone / npm install / pip install / ...]
          |
    STEP 1: Blocklist?  --> YES --> BLOCKED (RED) + explanation
          | NO
@@ -32,20 +34,19 @@ The skill only activates when it detects an install/download command in your mes
       CAUTION (YELLOW)
 ```
 
-**Step 1 (Blocklist)** — Instant check against 68+ known malicious packages. If matched, blocked immediately with full explanation of why.
+**Step 1 (Blocklist)** — Instant check against 68+ known malicious packages and repos. If matched, blocked immediately with full explanation of why, what happened, and where the intelligence comes from.
 
-**Step 2 (Trust Check)** — If not on the blocklist, check if the package is from a verified source:
-- **60+ trusted organizations** (deepseek-ai, openai, anthropic, facebook, google, microsoft, vercel, vuejs, etc.)
-- **70+ trusted packages** that bypass all checks (express, react, pandas, lodash, etc.)
-- **High star count** (1,000+ stars on GitHub)
-- **High download count** (10,000+ weekly on npm)
+**Step 2 (Trust Check)** — If not on the blocklist, check if the source is verified:
+- **GitHub**: Does it belong to a trusted org (60+ listed)? Does it have 1,000+ stars?
+- **npm/PyPI**: Does it have 10,000+ weekly downloads? Is it the official package name?
+- **Known packages**: 70+ trusted packages bypass all checks (express, react, pandas, lodash, etc.)
 
 If trusted → GREEN light, **zero further processing**.
 
-**Step 3 (Code Sniff)** — Only runs for truly unknown packages from unverified sources. Even then, it only reads 3 files max:
-1. `package.json` / `setup.py` — check install scripts
-2. `Makefile` / `Dockerfile` — check build commands
-3. One source file — glance for obfuscation patterns
+**Step 3 (Code Sniff)** — Only runs for truly unknown sources. Even then, it only reads 3 files max:
+- **GitHub repos**: `package.json` install scripts, `setup.py`/`pyproject.toml`, `Makefile`/`Dockerfile`
+- **npm packages**: `postinstall` scripts, dependency tree, source code patterns
+- **Any source**: One source file glance for obfuscation patterns
 
 ---
 
