@@ -1,4 +1,4 @@
-﻿# Huiyu-SafeAi
+# Huiyu-SafeAi
 
 Lightweight AI security guard for install/download commands. Blocks known malicious packages, verifies package identity, and scans for suspicious code — all in under 1 second.
 
@@ -47,6 +47,7 @@ Works across **all ecosystems** — `git clone`, `npm install`, `npx`, `pip inst
 **Step 1 (Blocklist)** — Instant check against 68+ known malicious packages and repos. If matched, blocked immediately with full explanation of why, what happened, and where the intelligence comes from.
 
 **Step 2 (Trust Check)** — If not on the blocklist, check if the source is verified:
+
 - **GitHub**: Does it belong to a trusted org (60+ listed)? Does it have 1,000+ stars?
 - **npm/PyPI**: Does it have 10,000+ weekly downloads? Is it the official package name?
 - **Known packages**: 70+ trusted packages bypass all checks (express, react, pandas, lodash, etc.)
@@ -54,6 +55,7 @@ Works across **all ecosystems** — `git clone`, `npm install`, `npx`, `pip inst
 If trusted → GREEN light, **zero further processing**.
 
 **Step 3 (Code Sniff)** — Only runs for truly unknown sources. Even then, it only reads 3 files max:
+
 - **GitHub repos**: `package.json` install scripts, `setup.py`/`pyproject.toml`, `Makefile`/`Dockerfile`
 - **npm packages**: `postinstall` scripts, dependency tree, source code patterns
 - **Any source**: One source file glance for obfuscation patterns
@@ -189,7 +191,7 @@ git clone https://github.com/huiyu9144/huiyu-safe-ai.git
 
 - **68+ confirmed malicious packages** in blocklist (all sourced from security research)
 - **60+ trusted organizations** auto-approved (deepseek-ai, openai, anthropic, facebook, etc.)
-- **70+ trusted packages** bypass all checks (express, react, pandas, etc.)
+- **70+ trusted packages** bypass all checks (express, react, pandas, lodash, etc.)
 - **Typosquatting detection** — catches name-similar malicious packages
 - **Code sniffing** — detects postinstall exploits, credential theft, obfuscated payloads
 - **Transparent blocking** — explains why each package is blocked with source attribution
