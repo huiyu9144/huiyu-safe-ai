@@ -259,13 +259,19 @@ Advice: Review the package manually before proceeding.
 
 ### RED — Blocked
 
+When blocking a package, ALWAYS include:
+1. Package name and ecosystem
+2. Specific threat type (typosquatting, crypto miner, credential theft, etc.)
+3. What actually happened in the real-world attack
+4. Data source / attribution
+
 ```
 Huiyu-SafeAi: BLOCKED
 Package: {package-name}
 Reason: {specific reason — blocklist match / malicious pattern found}
-Threat: {brief description of threat}
-Action: DO NOT install. Use an alternative package instead.
-        {suggest alternative if possible}
+Threat: {brief description of what the attack does}
+Source: {data source — e.g., "Socket Security research (2025), npm registry removal confirmed"}
+Action: DO NOT install. {suggest alternative if possible}
 ```
 
 ---
