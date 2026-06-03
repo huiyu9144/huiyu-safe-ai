@@ -49,6 +49,49 @@ If trusted → GREEN light, **zero further processing**.
 
 ---
 
+## Why This Exists: A Real Attack
+
+On May 11, 2026, we encountered a real supply chain attack targeting AI developers. This incident is the direct reason Huiyu-SafeAi was created.
+
+### What Happened
+
+A user requested deployment of **DeepSeek-TUI**, a popular open-source terminal interface (24.1k stars). The correct repository is `github.com/Hmbown/DeepSeek-TUI`. However, a **fake repository** existed at `github.com/DeepSeek-TUI/DeepSeek-TUI` — mimicking the project name with a lookalike GitHub organization.
+
+The downloaded executable was an **infostealer trojan** with thread injection, remote payload download, and Telegram data exfiltration capabilities.
+
+### The Damage (50+ minutes of incident response)
+
+The trojan performed a devastating chain of attacks in under 10 minutes:
+
+| Time | Action |
+|------|--------|
+| 09:47 | Trojan executed, released persistent backdoor |
+| 09:47 | Created `AppData\Roaming\Roaming\Data\Config\manager.exe` (12.5MB) — disguised with double-nested `Roaming` path |
+| 09:47 | Added registry auto-start: `HKCU\...\Run\{NetworkManager}` |
+| 09:47 | Opened firewall inbound port **57001** for C2 communication |
+| 09:47 | **Disabled Windows Defender** — RealTimeProtection, BehaviorMonitor, IOAV, NIS, OnAccess all turned off |
+| 09:47 | Released additional components: `svc_host.exe`, `~update.tmp.exe` |
+| 10:37 | Accessed browser data directories for credential theft |
+
+### Attribution
+
+This was not a random attack. It was linked to a **known APT group** with a documented pattern:
+
+- **Same group** that ran the OpenClaw impersonation attack in March 2026
+- GitHub user `graphrtest` — dormant since October 2025, suddenly active April 24, 2026
+- Also impersonated: GPT-5.5, Kimi, Manus AI, Seedance, fraudGPT
+- Payloads include: **Vidar** infostealer, **GhostSocks** proxy trojan, **MacSync** Stealer
+- Tracked by: **Microsoft**, **奇安信 (Qianxin)**, **Huntress**, **Zscaler**
+- A Taiwan IP `103.127.218.197` was found creating GitHub OAuth via a stolen token
+
+The real DeepSeek-TUI repo's Issue #1286 had a user reporting the fake repo on May 9 — two days before our incident. The attacker deleted Issue #2 on the fake repo where someone reported it as phishing.
+
+### The Lesson
+
+**This could happen to anyone.** The fake repository looked legitimate. Without a security check, there was no way to distinguish it from the real one. Huiyu-SafeAi exists to catch exactly this kind of attack — before the download happens.
+
+---
+
 ## When Blocked: Full Transparency
 
 When Huiyu-SafeAi blocks a package, it doesn't just say "blocked." It tells you:
