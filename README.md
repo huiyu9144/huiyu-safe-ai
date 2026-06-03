@@ -52,11 +52,11 @@ If trusted → GREEN light, **zero further processing**.
 
 ## Why This Exists: A Real Attack
 
-On May 11, 2026, we encountered a real supply chain attack targeting AI developers. This incident is the direct reason Huiyu-SafeAi was created.
+On May 11, 2026, I encountered a real supply chain attack targeting AI developers. This incident is the direct reason Huiyu-SafeAi was created.
 
 ### What Happened
 
-A user requested deployment of **DeepSeek-TUI**, a popular open-source terminal interface (24.1k stars). The correct repository is `github.com/Hmbown/DeepSeek-TUI`. However, a **fake repository** existed at `github.com/DeepSeek-TUI/DeepSeek-TUI` — mimicking the project name with a lookalike GitHub organization.
+I requested deployment of **DeepSeek-TUI**, a popular open-source terminal interface (24.1k stars). The correct repository is `github.com/Hmbown/DeepSeek-TUI`. However, a **fake repository** existed at `github.com/DeepSeek-TUI/DeepSeek-TUI` — mimicking the project name with a lookalike GitHub organization.
 
 The downloaded executable was an **infostealer trojan** with thread injection, remote payload download, and Telegram data exfiltration capabilities.
 
@@ -85,7 +85,7 @@ This was not a random attack. It was linked to a **known APT group** with a docu
 - Tracked by: **Microsoft**, **奇安信 (Qianxin)**, **Huntress**, **Zscaler**
 - A Taiwan IP `103.127.218.197` was found creating GitHub OAuth via a stolen token
 
-The real DeepSeek-TUI repo's Issue #1286 had a user reporting the fake repo on May 9 — two days before our incident. The attacker deleted Issue #2 on the fake repo where someone reported it as phishing.
+The real DeepSeek-TUI repo's Issue #1286 had a user reporting the fake repo on May 9 — two days before my incident. The attacker deleted Issue #2 on the fake repo where someone reported it as phishing.
 
 ### The Lesson
 
