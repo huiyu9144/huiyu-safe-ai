@@ -2,21 +2,19 @@
 
 Lightweight AI security guard for install/download commands. Blocks known malicious packages, verifies package identity, and scans for suspicious code — all in under 1 second.
 
-轻量级AI安全卫士，用于安装/下载命令。它能阻止已知的恶意软件包，验证软件包身份，并扫描可疑代码——所有操作均在1秒内完成。
-
 [中文](README.zh.md) · [English](README.md)
 
 ---
 
 <div align="center">
 
-**拦截恶意包 —— 拦截 deepseek-py（仿冒 DeepSeek 的恶意包，已知 typosquatting）**
+**Blocked malicious package — Caught deepseek-py (fake DeepSeek package, confirmed typosquatting)**
 
 ![Blocked: deepseek-py](assets/blocked-deepseek-py.jpg)
 
 <br>
 
-**验证安全仓库 —— 放行 huiyu9144/Huiyu-Pi（个人仓库，代码嗅探通过，无恶意行为）**
+**Verified safe repo — Passed huiyu9144/Huiyu-Pi (personal repo, code sniff clean, no malicious behavior)**
 
 ![Safe: Huiyu-Pi](assets/safe-huiyu-pi.jpg)
 
@@ -104,7 +102,7 @@ This was not a random attack. It was linked to a **known APT group** with a docu
 - GitHub user `graphrtest` — dormant since October 2025, suddenly active April 24, 2026
 - Also impersonated: GPT-5.5, Kimi, Manus AI, Seedance, fraudGPT
 - Payloads include: **Vidar** infostealer, **GhostSocks** proxy trojan, **MacSync** Stealer
-- Tracked by: **Microsoft**, **奇安信 (Qianxin)**, **Huntress**, **Zscaler**
+- Tracked by: **Microsoft**, **Qianxin (奇安信)**, **Huntress**, **Zscaler**
 - A Taiwan IP `103.127.218.197` was found creating GitHub OAuth via a stolen token
 
 The real DeepSeek-TUI repo's Issue #1286 had a user reporting the fake repo on May 9 — two days before my incident. The attacker deleted Issue #2 on the fake repo where someone reported it as phishing.
