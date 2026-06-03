@@ -235,6 +235,19 @@ Do NOT scan the entire repo. Only look at these files if available:
 
 ---
 
+## Language Rule (IMPORTANT)
+
+All output messages (GREEN/SAFE, YELLOW/CAUTION, RED/BLOCKED) MUST be written in the **same language as the user's conversation**. Detect the user's language from their message and respond accordingly:
+
+- If the user speaks Chinese → output in Chinese
+- If the user speaks English → output in English
+- If the user speaks Japanese → output in Japanese
+- etc.
+
+Do NOT hardcode English output. Adapt to the user's language dynamically.
+
+---
+
 ## Output Formats
 
 ### GREEN — Safe to Install
