@@ -115,6 +115,31 @@ Check the extracted package name or repo against the known blocklist below. If m
 | `node-extensions-utils` | npm | Hidden reverse shell |
 | `async-promises-extra` | npm | Supply chain attack |
 | `express-middlewares-pro` | npm | Malicious middleware |
+| `vite-plugin-vue-extend` | npm | Destructive payload disguised as Vite plugin |
+| `quill-image-downloader` | npm | Destructive payload disguised as Quill plugin |
+| `js-hood` | npm | Destructive payload, deletes project files |
+| `js-bomb` | npm | Recursive file deletion, triggers system shutdown |
+| `vue-plugin-bomb` | npm | Destructive payload targeting Vue.js projects |
+| `vite-plugin-bomb` | npm | Destructive payload targeting Vite projects |
+| `vite-plugin-bomb-extend` | npm | Destructive payload targeting Vite projects |
+| `vite-plugin-react-extend` | npm | Destructive payload disguised as React plugin |
+| `citiycar8` | npm | Phishing redirect, fake Office 365 login |
+| `solaibot` | npm | VS Code extension, steals crypto wallet credentials |
+| `among-eth` | npm | VS Code extension, steals Ethereum wallets |
+| `blankebesxstnion` | npm | VS Code extension, steals crypto credentials |
+| `bbb335656` | npm | System fingerprinting, sends data to Discord webhook |
+| `cdsfdfafd1232436437` | npm | System fingerprinting, sends data to Discord webhook |
+| `sdsds656565` | npm | System fingerprinting, sends data to Discord webhook |
+| `reques7s` | pypi | Typosquatting for requests, steals credentials |
+| `jeIlyfish` | pypi | Typosquatting for jellyfish, remote code execution |
+| `python-dateutil2` | pypi | Typosquatting for python-dateutil, data exfiltration |
+| `colorama-backup` | pypi | Typosquatting for colorama, reverse shell |
+| `python3-dateutil` | pypi | Typosquatting for python-dateutil, credential theft |
+| `requirements-parser2` | pypi | Typosquatting for requirements-parser, backdoor |
+| `django-server` | pypi | Typosquatting for Django, remote code execution |
+| `flask-app` | pypi | Typosquatting for Flask, data exfiltration |
+| `requests-oauth` | pypi | Typosquatting for requests-oauthlib, credential theft |
+| `beautifulsoup4-backup` | pypi | Typosquatting for beautifulsoup4, reverse shell |
 
 ### Blocklist Check Rules
 
