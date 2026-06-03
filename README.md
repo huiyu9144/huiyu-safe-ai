@@ -2,6 +2,16 @@
 
 Lightweight AI security guard for install/download commands. Blocks known malicious packages, verifies package identity, and scans for suspicious code — all in under 1 second.
 
+<div align="center">
+  <img src="assets/blocked-deepseek-py.jpg" width="600" alt="Blocked: deepseek-py">
+  <br>
+  <em>Caught a fake DeepSeek package — blocked with full explanation</em>
+  <br><br>
+  <img src="assets/safe-huiyu-pi.jpg" width="600" alt="Safe: Huiyu-Pi">
+  <br>
+  <em>Verified a personal repo — passed code sniff, safe to proceed</em>
+</div>
+
 ---
 
 ## Design Philosophy
