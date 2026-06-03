@@ -4,6 +4,8 @@ Lightweight AI security guard for install/download commands. Blocks known malici
 
 轻量级AI安全卫士，用于安装/下载命令。它能阻止已知的恶意软件包，验证软件包身份，并扫描可疑代码——所有操作均在1秒内完成。
 
+[中文](README.zh.md) · [English](README.md)
+
 ---
 
 <div align="center">
@@ -125,7 +127,7 @@ When Huiyu-SafeAi blocks a package, it doesn't just say "blocked." It tells you:
 ### Example: Blocked Package
 
 ```
-Huiyu-SafeAi: BLOCKED
+huiyu-safe-ai: BLOCKED
 Package: vite-plugin-bomb
 Reason: Confirmed malicious — destructive payload disguised as Vite plugin
 Threat: Recursively deletes project files and triggers system shutdown
@@ -136,7 +138,7 @@ Action: DO NOT install. This package was removed from npm for destructive behavi
 ### Example: Typosquatting Detection
 
 ```
-Huiyu-SafeAi: BLOCKED
+huiyu-safe-ai: BLOCKED
 Package: deepseek-py
 Reason: Typosquatting — impersonates legitimate DeepSeek packages
 Threat: Malicious payload, credential and data exfiltration
@@ -226,7 +228,7 @@ The blocklist covers these confirmed attack types:
 ### Safe Package (Official/Trusted)
 
 ```
-Huiyu-SafeAi: SAFE
+huiyu-safe-ai: SAFE
 Package: express
 Source:  Official npm package, 30M+ weekly downloads
 Verdict: No issues detected. Safe to proceed.
@@ -235,7 +237,7 @@ Verdict: No issues detected. Safe to proceed.
 ### Blocked Package (Known Malicious)
 
 ```
-Huiyu-SafeAi: BLOCKED
+huiyu-safe-ai: BLOCKED
 Package: js-bomb
 Reason: Confirmed malicious — destructive payload disguised as utility library
 Threat: Recursively deletes Vue.js/React/Vite project files, triggers system shutdown
@@ -246,7 +248,7 @@ Action: DO NOT install. This package was designed to destroy project data.
 ### Unknown Package (Caution)
 
 ```
-Huiyu-SafeAi: CAUTION
+huiyu-safe-ai: CAUTION
 Package: some-random-lib
 Source:  Personal repo, low download count
 Risks:  No known threats, but unverified source
