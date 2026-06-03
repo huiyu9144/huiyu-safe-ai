@@ -1,4 +1,4 @@
-# Huiyu-SafeAi
+﻿# Huiyu-SafeAi
 
 Lightweight AI security guard for install/download commands. Blocks known malicious packages, verifies package identity, and scans for suspicious code — all in under 1 second.
 
