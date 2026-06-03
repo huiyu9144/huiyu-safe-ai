@@ -13,7 +13,7 @@ argument-hint: "<package-name-or-url>"
 server: "https://github.com/huiyu9144/huiyu-safe-ai"
 ---
 
-# Huiyu-SafeAi — Lightweight AI Supply Chain Shield
+# huiyu-safe-ai — Lightweight AI Supply Chain Shield
 
 A zero-overhead, 3-step security checkpoint that runs before any install or download command. It blocks known malicious packages, verifies package identity, and performs a quick code sniff when needed.
 
@@ -240,7 +240,7 @@ Do NOT scan the entire repo. Only look at these files if available:
 ### GREEN — Safe to Install
 
 ```
-Huiyu-SafeAi: SAFE
+huiyu-safe-ai: SAFE
 Package: {package-name}
 Source:  {trusted-source-reason}
 Verdict: No issues detected. Safe to proceed.
@@ -249,7 +249,7 @@ Verdict: No issues detected. Safe to proceed.
 ### YELLOW — Caution
 
 ```
-Huiyu-SafeAi: CAUTION
+huiyu-safe-ai: CAUTION
 Package: {package-name}
 Source:  {unknown-source-type} (e.g., "personal repo, low download count")
 Risks:  {list of concerns or "No known threats, but unverified source"}
@@ -266,7 +266,7 @@ When blocking a package, ALWAYS include:
 4. Data source / attribution
 
 ```
-Huiyu-SafeAi: BLOCKED
+huiyu-safe-ai: BLOCKED
 Package: {package-name}
 Reason: {specific reason — blocklist match / malicious pattern found}
 Threat: {brief description of what the attack does}
